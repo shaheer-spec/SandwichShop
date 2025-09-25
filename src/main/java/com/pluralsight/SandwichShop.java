@@ -11,7 +11,32 @@ public class SandwichShop {
                 "\n2: Large: base price $8.95");
         int sandwich = scanner.nextInt();
 
-        double finalSandwich = 0;
+        System.out.println("What is your age?");
+        int age = scanner.nextInt();
+
+        double basePrice = 0;
+        double finalPrice;
+
+        if (sandwich != 1 && sandwich !=2 ) {
+            System.out.println("Invalid");
+        } else if (sandwich == 1) {
+            basePrice = 5.45;
+        } else {
+            basePrice = 8.95;
+        }
+
+
+        if (age <= 17) {
+            finalPrice = basePrice * 0.9;
+        } else if (age >= 65) {
+            finalPrice = basePrice * 0.8;
+        } else {
+            finalPrice = basePrice;
+        }
+
+        System.out.printf("The Final Price is $%.2f", finalPrice);
+
+/*        double finalSandwich = 0;
 
         if (sandwich == 1){
             finalSandwich = 5.45;
@@ -33,7 +58,7 @@ public class SandwichShop {
         } else {
             finalPrice = finalSandwich * 0.8;
         }
-        System.out.println("Your Sandwich costs: $" + finalPrice);
+        System.out.println("Your Sandwich costs: $" + finalPrice);*/
 
     }
 }
